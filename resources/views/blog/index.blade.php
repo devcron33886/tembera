@@ -25,8 +25,8 @@
         </div>
     </div>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-84 py-24">
-    	<div class="bg-white overflow-hidden">
-    		<div class="grid grid-cols-3 gap-4">
+    	<div class="bg-white overflow-hidden mr-4 ml-4">
+    		<div class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
     			@foreach($posts as $post)
     			<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     				<a href="{{ route('blog-detail',$post->slug) }}">
@@ -54,7 +54,7 @@
     			</div>
     			@endforeach
     		</div>
-    		<div class="mt-4 items-center">
+    		<div class="py-12 items-center">
     			{{ $posts->links() }}
     		</div>
     	</div>

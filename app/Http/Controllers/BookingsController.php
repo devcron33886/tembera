@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class BookingsController extends Controller
 {
     public function index()
     {

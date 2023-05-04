@@ -23,13 +23,14 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\BookingsController;
 
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/services', ServicesController::class)->name('services.index');
 Route::get('/about-us', AboutController::class)->name('about.index');
-Route::get('/booking', [BookingController::class,'index'])->name('booking.index');
+Route::get('/booking', [BookingsController::class,'index'])->name('booking.index');
 Route::get('/contact-us',[ContactController::class,'index'])->name('contact.index');
 Route::get('/blog',BlogController::class)->name('blog.index');
 
