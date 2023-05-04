@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\BlogDetailController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryDetailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServicesController;
@@ -30,6 +31,7 @@ Route::get('/services', ServicesController::class)->name('services.index');
 Route::get('/about-us', AboutController::class)->name('about.index');
 Route::get('/booking', [BookingController::class,'index'])->name('booking.index');
 Route::get('/contact-us',[ContactController::class,'index'])->name('contact.index');
+Route::get('/blog',BlogController::class)->name('blog.index');
 
 
 Route::get('/posts/{slug}', BlogDetailController::class)->name('blog-detail');
