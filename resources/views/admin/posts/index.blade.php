@@ -35,10 +35,10 @@
                             {{ trans('cruds.post.fields.author') }}
                         </th>
                         <th>
-                            {{ trans('cruds.post.fields.category') }}
+                            {{ trans('cruds.post.fields.tag') }}
                         </th>
                         <th>
-                            {{ trans('cruds.post.fields.tag') }}
+                            {{ trans('cruds.post.fields.category') }}
                         </th>
                         <th>
                             &nbsp;
@@ -64,14 +64,12 @@
                                 {{ $post->author->name ?? '' }}
                             </td>
                             <td>
-                                @foreach($post->categories as $key => $item)
+                                @foreach($post->tags as $key => $item)
                                     <span class="badge badge-info">{{ $item->name }}</span>
                                 @endforeach
                             </td>
                             <td>
-                                @foreach($post->tags as $key => $item)
-                                    <span class="badge badge-info">{{ $item->name }}</span>
-                                @endforeach
+                                {{ $post->category->name ?? '' }}
                             </td>
                             <td>
                                 @can('post_show')

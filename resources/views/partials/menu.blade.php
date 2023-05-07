@@ -92,6 +92,30 @@
                         </a>
                     </li>
                 @endcan
+                @can('event_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.events.index") }}" class="nav-link {{ request()->is("admin/events") || request()->is("admin/events/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fab fa-adn">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.event.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('contact_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.contacts.index") }}" class="nav-link {{ request()->is("admin/contacts") || request()->is("admin/contacts/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-mobile-alt">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.contact.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 @can('post_management_access')
                     <li class="nav-item has-treeview {{ request()->is("admin/categories*") ? "menu-open" : "" }} {{ request()->is("admin/tags*") ? "menu-open" : "" }} {{ request()->is("admin/posts*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/categories*") ? "active" : "" }} {{ request()->is("admin/tags*") ? "active" : "" }} {{ request()->is("admin/posts*") ? "active" : "" }}" href="#">
@@ -145,7 +169,7 @@
                 @endcan
                 @can('faq_management_access')
                     <li class="nav-item has-treeview {{ request()->is("admin/faq-categories*") ? "menu-open" : "" }} {{ request()->is("admin/faq-questions*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/faq-categories*") ? "active" : "" }} {{ request()->is("admin/faq-questions*") ? "active" : "" }}" href="#">
+                        <a class="nav-link nav-dropdown-toggle{{ request()->is("admin/faq-questions*") ? "active" : "" }}" href="#">
                             <i class="fa-fw nav-icon fas fa-question">
 
                             </i>

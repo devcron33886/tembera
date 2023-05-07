@@ -13,17 +13,20 @@
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
                     class="relative bg-green-800 rounded-full px-3 py-1 text-md leading-6 text-white ring-1 ring-white/10 hover:ring-white/20">
-                    Announcing our next Event. <a href="#" class="font-semibold text-white"><span
+                    Announcing our next Event. <a href="{{ route('events.index') }}"
+                                                  class="font-semibold text-white"><span
                             class="absolute inset-0" aria-hidden="true"></span> Read more <span
                             aria-hidden="true">&rarr;</span></a>
                 </div>
             </div>
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welcome to {{ config('app.name')}}</h1>
-                <p class="mt-6 text-lg leading-8 text-white">Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-                    irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welcome
+                    to {{ config('app.name')}}</h1>
+                <p class="mt-6 text-lg leading-8 text-white">Let's travel to conserve our
+                    nature. {{ config('app.name') }} is your best choice traveling company in domestic tourism because
+                    they don't send you there they take you there.</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="#"
+                    <a href="{{ route('about.index') }}"
                        class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">Read
                         more<span
                             aria-hidden="true">  →</span></a>
@@ -46,11 +49,12 @@
             <div
                 class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
                 <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ready to travel with us?</h2>
-                    <p class="mt-6 text-xl leading-8 text-gray-600">Book your next trip with Tembera 250.</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ready to travel with
+                        us?</h2>
+                    <p class="mt-6 text-xl leading-8 text-gray-600">Book your next trip with {{ config('app.name') }}.</p>
 
                     <div class="mt-10 flex">
-                        <a href="#"
+                        <a href="{{ route('booking.index') }}"
                            class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Book
                             Now <span aria-hidden="true">&rarr;</span></a>
                     </div>

@@ -12,6 +12,7 @@
             <a href="{{ route('about.index')}}" class="text-sm font-semibold leading-6 text-white">About us</a>
             <a href="{{ route('services.index') }}" class="text-sm font-semibold leading-6 text-white">Services</a>
             <a href="{{ route('booking.index') }}" class="text-sm font-semibold leading-6 text-white">Booking</a>
+            <a href=" {{ route('events') }}" class="text-sm font-semibold leading-6 text-white">Events</a>
             <a href=" {{ route('blog.index') }}" class="text-sm font-semibold leading-6 text-white">Blog</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -28,7 +29,7 @@
         </div>
         <!-- Mobile menu, show/hide based on menu open state. -->
         <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
-            
+
             <div class="fixed inset-0 z-50"></div>
             <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
                 <div class="flex items-center justify-between">
@@ -53,6 +54,7 @@
                             <a href="{{ route('services.index') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Services</a>
 
                             <a href="{{ route('booking.index') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Booking</a>
+                            <a href="{{ route('events') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Events</a>
                             <a href="{{ route('blog.index') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Blog</a>
                         </div>
                         <div class="py-6">
@@ -61,7 +63,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
-        
-    </nav>  
+        </div>
+
+    </nav>
 </header>

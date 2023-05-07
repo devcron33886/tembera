@@ -29,18 +29,15 @@ class StorePostRequest extends FormRequest
                 'required',
                 'integer',
             ],
-            'categories.*' => [
-                'integer',
-            ],
-            'categories' => [
-                'required',
-                'array',
-            ],
             'tags.*' => [
                 'integer',
             ],
             'tags' => [
                 'array',
+            ],
+            'category_id' => [
+                'required',
+                'integer',
             ],
         ];
     }

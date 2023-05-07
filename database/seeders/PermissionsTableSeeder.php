@@ -304,6 +304,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id' => 74,
+                'title' => 'event_create',
+            ],
+            [
+                'id' => 75,
+                'title' => 'event_edit',
+            ],
+            [
+                'id' => 76,
+                'title' => 'event_show',
+            ],
+            [
+                'id' => 77,
+                'title' => 'event_delete',
+            ],
+            [
+                'id' => 78,
+                'title' => 'event_access',
+            ],
+            [
+                'id' => 79,
                 'title' => 'profile_password_edit',
             ],
         ];

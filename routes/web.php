@@ -3,6 +3,8 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FaqQuestionController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PackageController;
@@ -16,25 +18,25 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\ChangePasswordController;
-use App\Http\Controllers\BlogDetailController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogDetailController;
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\CategoryDetailController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\BookingsController;
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/services', ServicesController::class)->name('services.index');
 Route::get('/about-us', AboutController::class)->name('about.index');
-Route::get('/booking', [BookingsController::class,'index'])->name('booking.index');
-Route::get('/contact-us',[ContactController::class,'index'])->name('contact.index');
-Route::get('/blog',BlogController::class)->name('blog.index');
-
-
+Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
+Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');
+Route::get('/blog', BlogController::class)->name('blog.index');
+Route::get('events', EventsController::class)->name('events');
 Route::get('/posts/{slug}', BlogDetailController::class)->name('blog-detail');
 Route::get('/tags/{slug}', TagDetailController::class)->name('tag-detail');
 Route::get('/categories/{slug}', CategoryDetailController::class)->name('category-detail');
@@ -90,7 +92,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('bookings', BookingController::class);
 
     // Setting
-
+    Route::delete('settings/destroy', [SettingController::class, 'massDestroy'])->name('settings.massDestroy');
     Route::post('settings/media', [SettingController::class, 'storeMedia'])->name('settings.storeMedia');
     Route::post('settings/ckmedia', [SettingController::class, 'storeCKEditorImages'])->name('settings.storeCKEditorImages');
     Route::resource('settings', SettingController::class);
@@ -106,6 +108,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     // Review
     Route::delete('reviews/destroy', [ReviewController::class, 'massDestroy'])->name('reviews.massDestroy');
     Route::resource('reviews', ReviewController::class);
+
+    // Event
+    Route::delete('events/destroy', [EventController::class, 'massDestroy'])->name('events.massDestroy');
+    Route::post('events/media', [EventController::class, 'storeMedia'])->name('events.storeMedia');
+    Route::post('events/ckmedia', [EventController::class, 'storeCKEditorImages'])->name('events.storeCKEditorImages');
+    Route::resource('events', EventController::class);
+
+    Route::delete('contacts/destroy', [ContactController::class, 'massDestroy'])->name('contacts.massDestroy');
+    Route::resource('contacts', ContactController::class);
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth']], function () {
     // Change password

@@ -24,7 +24,7 @@ class PostController extends Controller
     {
         abort_if(Gate::denies('post_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $posts = Post::with(['author', 'categories', 'tags', 'media'])->get();
+        $posts = Post::with(['author', 'tags', 'category', 'media'])->get();
 
         return view('admin.posts.index', compact('posts'));
     }
@@ -35,9 +35,9 @@ class PostController extends Controller
 
         $authors = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $categories = Category::pluck('name', 'id');
-
         $tags = Tag::pluck('name', 'id');
+
+        $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.posts.create', compact('authors', 'categories', 'tags'));
     }
@@ -45,7 +45,6 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $post = Post::create($request->all());
-        $post->categories()->sync($request->input('categories', []));
         $post->tags()->sync($request->input('tags', []));
         if ($request->input('featured_image', false)) {
             $post->addMedia(storage_path('tmp/uploads/'.basename($request->input('featured_image'))))->toMediaCollection('featured_image');
@@ -64,11 +63,11 @@ class PostController extends Controller
 
         $authors = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $categories = Category::pluck('name', 'id');
-
         $tags = Tag::pluck('name', 'id');
 
-        $post->load('author', 'categories', 'tags');
+        $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $post->load('author', 'tags', 'category');
 
         return view('admin.posts.edit', compact('authors', 'categories', 'post', 'tags'));
     }
@@ -76,7 +75,6 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         $post->update($request->all());
-        $post->categories()->sync($request->input('categories', []));
         $post->tags()->sync($request->input('tags', []));
         if ($request->input('featured_image', false)) {
             if (! $post->featured_image || $request->input('featured_image') !== $post->featured_image->file_name) {
@@ -96,7 +94,7 @@ class PostController extends Controller
     {
         abort_if(Gate::denies('post_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $post->load('author', 'categories', 'tags');
+        $post->load('author', 'tags', 'category');
 
         return view('admin.posts.show', compact('post'));
     }

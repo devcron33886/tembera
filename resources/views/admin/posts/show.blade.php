@@ -69,22 +69,20 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.post.fields.category') }}
-                        </th>
-                        <td>
-                            @foreach($post->categories as $key => $category)
-                                <span class="label label-info">{{ $category->name }}</span>
-                            @endforeach
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.post.fields.tag') }}
                         </th>
                         <td>
                             @foreach($post->tags as $key => $tag)
                                 <span class="label label-info">{{ $tag->name }}</span>
                             @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.post.fields.category') }}
+                        </th>
+                        <td>
+                            {{ $post->category->name ?? '' }}
                         </td>
                     </tr>
                 </tbody>
