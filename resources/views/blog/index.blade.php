@@ -24,39 +24,66 @@
             </div>
         </div>
     </div>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-84 py-24">
-    	<div class="bg-white overflow-hidden mr-4 ml-4">
-    		<div class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-    			@foreach($posts as $post)
-    			<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    				<a href="{{ route('blog-detail',$post->slug) }}">
-    					<img class="rounded-t-lg h-auto" src="{{ asset('images/tembera 250 blog header.jpg') }}" alt="" />
-    				</a>
-    				<div class="p-5">
-    					<a href="{{ route('blog-detail',$post->slug) }}">
-    						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title}}</h5>
-    					</a>
-    					<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ Str::limit($post->body,250)}}.</p>
+    <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8 pt-12">
+        <div class="pb-24 pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+            <aside>
 
-    					<div class="px-6 pt-4 pb-2">
-                            <span
-                                class="inline-block bg-green-200 rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Photography</span>
-                                <span
-                                    class="inline-block bg-green-200 rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Travel</span>
-                                <span
-                                    class="inline-block bg-green-200 rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Winter</span>
-                            </div>
-    					<a href="{{ route('blog-detail',$post->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-2 mb-2">
-    						Read more
-    						<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    					</a>
-    				</div>
-    			</div>
-    			@endforeach
-    		</div>
-    		<div class="py-12 items-center">
-    			{{ $posts->links() }}
-    		</div>
-    	</div>
+                <div class="hidden lg:block">
+                    <form class="space-y-10 divide-y divide-gray-200">
+                        <div class="pt-10">
+                            <fieldset>
+                                <legend class="block text-sm font-medium text-gray-900">Category</legend>
+                                <div class="space-y-3 pt-6">
+
+                                @foreach($categories as $category)
+
+                                    <div class="flex items-center">
+                                        <a href="{{ route('category-detail',$category->slug)}}" 
+                                               class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                        <p class="ml-2 text-sm text-gray-600">{{ $category->name}}</p>
+                                    </a>
+                                    </div>
+                                @endforeach
+
+                                    
+
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+
+            <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+                <h2 id="product-heading" class="sr-only">Posts</h2>
+
+                <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-2">
+                    
+
+@foreach($posts as $post)
+                    <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+                        <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                            @if($post->featured_image)
+                                 <a href="{{ route('blog-detail',$post->slug) }}">
+                        <img class="h-full w-full object-cover object-center sm:h-full sm:w-full" src="{{ $post->featured_image->getUrl('preview') }}" alt="{{ $post->title}}" />
+                        @endif
+                    </a>
+                        </div>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title}}</h5>
+                            </a>
+                            
+                            <a href="{{ route('blog-detail',$post->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </section>
+        </div>
     </div>
 </x-app-layout>

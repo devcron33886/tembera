@@ -10,6 +10,8 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id', 'category_fk_8442687')->references('id')->on('categories');
             $table->string('title');
             $table->string('slug')->nullable();
             $table->date('starting_date');

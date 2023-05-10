@@ -13,7 +13,7 @@
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
                     class="relative bg-green-800 rounded-full px-3 py-1 text-md leading-6 text-white ring-1 ring-white/10 hover:ring-white/20">
-                    Announcing our next Event. <a href="{{ route('events.index') }}"
+                    Announcing our next Event. <a href="{{ route('events') }}"
                                                   class="font-semibold text-white"><span
                             class="absolute inset-0" aria-hidden="true"></span> Read more <span
                             aria-hidden="true">&rarr;</span></a>

@@ -42,6 +42,7 @@ class Post extends Model implements HasMedia
         'body',
         'status',
         'author_id',
+        'category_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -57,8 +58,8 @@ class Post extends Model implements HasMedia
      */
     public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaConversion('thumb')->fit('crop', 50, 50);
-        $this->addMediaConversion('preview')->fit('crop', 120, 120);
+        $this->addMediaConversion('thumb')->fit('crop', 400, 400);
+        $this->addMediaConversion('preview')->fit('crop',1920,1080);
     }
 
     public function getFeaturedImageAttribute()
@@ -78,9 +79,9 @@ class Post extends Model implements HasMedia
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    public function categories(): BelongsToMany
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function tags(): BelongsToMany

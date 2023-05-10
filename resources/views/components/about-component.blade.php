@@ -25,14 +25,9 @@
             <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                     <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Who we are</h1>
-                    <p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">Cupidatat
-                        minim
-                        id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute velit. Et labore
-                        commodo
-                        nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt mollit
-                        id
-                        pariatur in voluptate cillum. Eu voluptate tempor esse minim amet fugiat veniam occaecat
-                        aliqua.</p>
+                    <p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                        Tembera250 is a tour and travel company in Musanze, Rwanda. We are renowned for our unique travel packages and services, community-based tourism, and nature conservation-based tourism activities. Our heart is to offer a holistic and exceptional experience for our local and international clients. We work in partnership with other tourism and hospitality industry companies, the local government, and individuals to ensure that our clients' needs are well taken care of throughout their travel and stay in any part of Rwanda and East Africa.
+                    </p>
                 </div>
                 <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                     <div
@@ -81,25 +76,20 @@
             </div>
         </div>
         <!-- Content section -->
-        <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8 pb-24">
+        <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8 pb-16">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
                 <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                     <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
-                        <p class="text-xl leading-8 text-gray-600">Aliquet nec orci mattis amet quisque ullamcorper
-                            neque, nibh
-                            sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat
-                            egestas ac. Diam
-                            nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>
-                        <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                            <p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis
-                                mauris semper sed
-                                amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra
-                                tellus
-                                varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed
-                                eget risus
-                                enim. Mattis mauris semper sed amet vitae sed turpis id.</p>
-                            
+                        <p class="text-xl leading-8 text-gray-700">To make the world of travel more sustainable, more accessible, and more inclusive through excellent services and products, nature conservation, and community-based tourism.</p>
+                        <div class="mt-12 max-w-xl">
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Vision</h2>
+                            <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
+                                <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+
+                                    <p class="text-xl leading-7 text-gray-700">To be Africa’s leading one-stop travel solutions provider with customer delight at heart.</p>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                     <div class="lg:flex lg:flex-auto lg:justify-center">

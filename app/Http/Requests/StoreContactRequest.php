@@ -9,7 +9,7 @@ class StoreContactRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('contact_create');
+        return true;
     }
 
     public function rules()

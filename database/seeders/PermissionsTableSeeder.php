@@ -11,319 +11,339 @@ class PermissionsTableSeeder extends Seeder
     {
         $permissions = [
             [
-                'id' => 1,
+                'id'    => 1,
                 'title' => 'user_management_access',
             ],
             [
-                'id' => 2,
+                'id'    => 2,
                 'title' => 'permission_create',
             ],
             [
-                'id' => 3,
+                'id'    => 3,
                 'title' => 'permission_edit',
             ],
             [
-                'id' => 4,
+                'id'    => 4,
                 'title' => 'permission_show',
             ],
             [
-                'id' => 5,
+                'id'    => 5,
                 'title' => 'permission_delete',
             ],
             [
-                'id' => 6,
+                'id'    => 6,
                 'title' => 'permission_access',
             ],
             [
-                'id' => 7,
+                'id'    => 7,
                 'title' => 'role_create',
             ],
             [
-                'id' => 8,
+                'id'    => 8,
                 'title' => 'role_edit',
             ],
             [
-                'id' => 9,
+                'id'    => 9,
                 'title' => 'role_show',
             ],
             [
-                'id' => 10,
+                'id'    => 10,
                 'title' => 'role_delete',
             ],
             [
-                'id' => 11,
+                'id'    => 11,
                 'title' => 'role_access',
             ],
             [
-                'id' => 12,
+                'id'    => 12,
                 'title' => 'user_create',
             ],
             [
-                'id' => 13,
+                'id'    => 13,
                 'title' => 'user_edit',
             ],
             [
-                'id' => 14,
+                'id'    => 14,
                 'title' => 'user_show',
             ],
             [
-                'id' => 15,
+                'id'    => 15,
                 'title' => 'user_delete',
             ],
             [
-                'id' => 16,
+                'id'    => 16,
                 'title' => 'user_access',
             ],
             [
-                'id' => 17,
+                'id'    => 17,
                 'title' => 'category_create',
             ],
             [
-                'id' => 18,
+                'id'    => 18,
                 'title' => 'category_edit',
             ],
             [
-                'id' => 19,
+                'id'    => 19,
                 'title' => 'category_show',
             ],
             [
-                'id' => 20,
+                'id'    => 20,
                 'title' => 'category_delete',
             ],
             [
-                'id' => 21,
+                'id'    => 21,
                 'title' => 'category_access',
             ],
             [
-                'id' => 22,
+                'id'    => 22,
                 'title' => 'tag_create',
             ],
             [
-                'id' => 23,
+                'id'    => 23,
                 'title' => 'tag_edit',
             ],
             [
-                'id' => 24,
+                'id'    => 24,
                 'title' => 'tag_show',
             ],
             [
-                'id' => 25,
+                'id'    => 25,
                 'title' => 'tag_delete',
             ],
             [
-                'id' => 26,
+                'id'    => 26,
                 'title' => 'tag_access',
             ],
             [
-                'id' => 27,
+                'id'    => 27,
                 'title' => 'post_create',
             ],
             [
-                'id' => 28,
+                'id'    => 28,
                 'title' => 'post_edit',
             ],
             [
-                'id' => 29,
+                'id'    => 29,
                 'title' => 'post_show',
             ],
             [
-                'id' => 30,
+                'id'    => 30,
                 'title' => 'post_delete',
             ],
             [
-                'id' => 31,
+                'id'    => 31,
                 'title' => 'post_access',
             ],
             [
-                'id' => 32,
+                'id'    => 32,
                 'title' => 'service_create',
             ],
             [
-                'id' => 33,
+                'id'    => 33,
                 'title' => 'service_edit',
             ],
             [
-                'id' => 34,
+                'id'    => 34,
                 'title' => 'service_show',
             ],
             [
-                'id' => 35,
+                'id'    => 35,
                 'title' => 'service_delete',
             ],
             [
-                'id' => 36,
+                'id'    => 36,
                 'title' => 'service_access',
             ],
             [
-                'id' => 37,
+                'id'    => 37,
                 'title' => 'package_create',
             ],
             [
-                'id' => 38,
+                'id'    => 38,
                 'title' => 'package_edit',
             ],
             [
-                'id' => 39,
+                'id'    => 39,
                 'title' => 'package_show',
             ],
             [
-                'id' => 40,
+                'id'    => 40,
                 'title' => 'package_delete',
             ],
             [
-                'id' => 41,
+                'id'    => 41,
                 'title' => 'package_access',
             ],
             [
-                'id' => 42,
+                'id'    => 42,
                 'title' => 'booking_create',
             ],
             [
-                'id' => 43,
+                'id'    => 43,
                 'title' => 'booking_edit',
             ],
             [
-                'id' => 44,
+                'id'    => 44,
                 'title' => 'booking_show',
             ],
             [
-                'id' => 45,
+                'id'    => 45,
                 'title' => 'booking_delete',
             ],
             [
-                'id' => 46,
+                'id'    => 46,
                 'title' => 'booking_access',
             ],
             [
-                'id' => 47,
+                'id'    => 47,
                 'title' => 'setting_create',
             ],
             [
-                'id' => 48,
+                'id'    => 48,
                 'title' => 'setting_edit',
             ],
             [
-                'id' => 49,
+                'id'    => 49,
                 'title' => 'setting_show',
             ],
             [
-                'id' => 50,
+                'id'    => 50,
                 'title' => 'setting_delete',
             ],
             [
-                'id' => 51,
+                'id'    => 51,
                 'title' => 'setting_access',
             ],
             [
-                'id' => 52,
+                'id'    => 52,
                 'title' => 'faq_management_access',
             ],
             [
-                'id' => 53,
+                'id'    => 53,
                 'title' => 'faq_category_create',
             ],
             [
-                'id' => 54,
+                'id'    => 54,
                 'title' => 'faq_category_edit',
             ],
             [
-                'id' => 55,
+                'id'    => 55,
                 'title' => 'faq_category_show',
             ],
             [
-                'id' => 56,
+                'id'    => 56,
                 'title' => 'faq_category_delete',
             ],
             [
-                'id' => 57,
+                'id'    => 57,
                 'title' => 'faq_category_access',
             ],
             [
-                'id' => 58,
+                'id'    => 58,
                 'title' => 'faq_question_create',
             ],
             [
-                'id' => 59,
+                'id'    => 59,
                 'title' => 'faq_question_edit',
             ],
             [
-                'id' => 60,
+                'id'    => 60,
                 'title' => 'faq_question_show',
             ],
             [
-                'id' => 61,
+                'id'    => 61,
                 'title' => 'faq_question_delete',
             ],
             [
-                'id' => 62,
+                'id'    => 62,
                 'title' => 'faq_question_access',
             ],
             [
-                'id' => 63,
+                'id'    => 63,
                 'title' => 'testimonial_create',
             ],
             [
-                'id' => 64,
+                'id'    => 64,
                 'title' => 'testimonial_edit',
             ],
             [
-                'id' => 65,
+                'id'    => 65,
                 'title' => 'testimonial_show',
             ],
             [
-                'id' => 66,
+                'id'    => 66,
                 'title' => 'testimonial_delete',
             ],
             [
-                'id' => 67,
+                'id'    => 67,
                 'title' => 'testimonial_access',
             ],
             [
-                'id' => 68,
+                'id'    => 68,
                 'title' => 'review_create',
             ],
             [
-                'id' => 69,
+                'id'    => 69,
                 'title' => 'review_edit',
             ],
             [
-                'id' => 70,
+                'id'    => 70,
                 'title' => 'review_show',
             ],
             [
-                'id' => 71,
+                'id'    => 71,
                 'title' => 'review_delete',
             ],
             [
-                'id' => 72,
+                'id'    => 72,
                 'title' => 'review_access',
             ],
             [
-                'id' => 73,
+                'id'    => 73,
                 'title' => 'post_management_access',
             ],
             [
-                'id' => 74,
+                'id'    => 74,
                 'title' => 'event_create',
             ],
             [
-                'id' => 75,
+                'id'    => 75,
                 'title' => 'event_edit',
             ],
             [
-                'id' => 76,
+                'id'    => 76,
                 'title' => 'event_show',
             ],
             [
-                'id' => 77,
+                'id'    => 77,
                 'title' => 'event_delete',
             ],
             [
-                'id' => 78,
+                'id'    => 78,
                 'title' => 'event_access',
             ],
             [
-                'id' => 79,
+                'id'    => 79,
+                'title' => 'contact_create',
+            ],
+            [
+                'id'    => 80,
+                'title' => 'contact_edit',
+            ],
+            [
+                'id'    => 81,
+                'title' => 'contact_show',
+            ],
+            [
+                'id'    => 82,
+                'title' => 'contact_delete',
+            ],
+            [
+                'id'    => 83,
+                'title' => 'contact_access',
+            ],
+            [
+                'id'    => 84,
                 'title' => 'profile_password_edit',
             ],
         ];

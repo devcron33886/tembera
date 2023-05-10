@@ -72,8 +72,8 @@
                             {{ trans('cruds.post.fields.tag') }}
                         </th>
                         <td>
-                            @foreach($post->tags as $key => $tag)
-                                <span class="label label-info">{{ $tag->name }}</span>
+                            @foreach($post->tags as $key => $item)
+                                    <span class="badge badge-info">{{ $item->name }}</span>
                             @endforeach
                         </td>
                     </tr>

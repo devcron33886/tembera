@@ -37,7 +37,7 @@ Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.i
 Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');
 Route::get('/blog', BlogController::class)->name('blog.index');
 Route::get('events', EventsController::class)->name('events');
-Route::get('/posts/{slug}', BlogDetailController::class)->name('blog-detail');
+Route::get('/blog/{slug}', BlogDetailController::class)->name('blog-detail');
 Route::get('/tags/{slug}', TagDetailController::class)->name('tag-detail');
 Route::get('/categories/{slug}', CategoryDetailController::class)->name('category-detail');
 

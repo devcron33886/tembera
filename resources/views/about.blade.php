@@ -38,54 +38,43 @@
     <!-- Values section -->
     <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our values</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum dolor sit amet consect adipisicing elit.
-                Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our core values</h2>
+            <p class="mt-6 text-lg leading-8 text-gray-600">We are a customer oreinted traveling company with the following core values.</p>
         </div>
         <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             <div>
-                <dt class="font-semibold text-gray-900">Be world-class</dt>
-                <dd class="mt-1 text-gray-600">Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint
-                    et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit
-                    porro vero.
+                <dt class="font-semibold text-gray-900">Excellence</dt>
+                <dd class="mt-1 text-gray-600">We strive to understand the needs of the customers and ensure we have the right people, services, and products to meet those needs.
                 </dd>
             </div>
 
             <div>
-                <dt class="font-semibold text-gray-900">Share everything you know</dt>
-                <dd class="mt-1 text-gray-600">Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime
-                    adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia
-                    quaerat minima.
+                <dt class="font-semibold text-gray-900">Reliable</dt>
+                <dd class="mt-1 text-gray-600">We are consistent and keen to deliver what we promise.
                 </dd>
             </div>
 
             <div>
-                <dt class="font-semibold text-gray-900">Always learning</dt>
-                <dd class="mt-1 text-gray-600">Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt
-                    fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.
+                <dt class="font-semibold text-gray-900">Passionate</dt>
+                <dd class="mt-1 text-gray-600">We love people and what we do. Our culture is based on a positive attitude, enthusiasm, and going the extra mile.
                 </dd>
             </div>
 
             <div>
-                <dt class="font-semibold text-gray-900">Be supportive</dt>
-                <dd class="mt-1 text-gray-600">Magnam provident veritatis odit. Vitae eligendi repellat non. Eum
-                    fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error
-                    deserunt harum.
+                <dt class="font-semibold text-gray-900">Accountability</dt>
+                <dd class="mt-1 text-gray-600">We keep our commitments and speak up when we no longer believe we can meet the agreed commitments. We also taking ownership of our shortcomings.
                 </dd>
             </div>
 
             <div>
-                <dt class="font-semibold text-gray-900">Take responsibility</dt>
-                <dd class="mt-1 text-gray-600">Sit minus expedita quam in ullam molestiae dignissimos in harum.
-                    Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas
-                    perspiciatis error.
+                <dt class="font-semibold text-gray-900">Empathy</dt>
+                <dd class="mt-1 text-gray-600">We actively listen, observe, and act on our customers, local community, local government, and nature's needs.
                 </dd>
             </div>
 
             <div>
-                <dt class="font-semibold text-gray-900">Enjoy downtime</dt>
-                <dd class="mt-1 text-gray-600">Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum
-                    dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.
+                <dt class="font-semibold text-gray-900">Integrity</dt>
+                <dd class="mt-1 text-gray-600">We are guided by the law, both locally and in the travel industry. We observe our organization’s policies and processes.
                 </dd>
             </div>
         </dl>
@@ -110,8 +99,7 @@
             </svg>
         </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">Trusted by the world’s most
-                innovative teams</h2>
+            <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">Our trusted partners.</h2>
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
                 <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"

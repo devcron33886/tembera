@@ -9,8 +9,9 @@ class CategoryDetailController extends Controller
     public function __invoke($slug)
     {
         $category = Category::with('posts')->where('slug', $slug)->firstOrFail();
-        $query = $category->posts()->orderByDesc('id');
+        $posts = $category->posts()->orderByDesc('id')->paginate(12);
 
-        return view('categories.index', compact('category', 'query'));
+
+        return view('categories.index', compact('category', 'posts'));
     }
 }

@@ -13,6 +13,10 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug')->nullable();
             $table->longText('body');
+            $table->unsignedBigInteger('author_id')->nullable();
+            $table->foreign('author_id', 'author_fk_8404381')->references('id')->on('users');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id', 'category_fk_8422293')->references('id')->on('categories');
             $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();

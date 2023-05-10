@@ -11,7 +11,7 @@ class BlogComponent extends Component
 {
     public function render(): View|Closure|string
     {
-        $posts = Post::with(['author', 'categories', 'tags'])->limit(3)->get();
+        $posts = Post::with(['author', 'category', 'tags'])->limit(3)->get();
 
         return view('components.blog-component', compact('posts'));
     }

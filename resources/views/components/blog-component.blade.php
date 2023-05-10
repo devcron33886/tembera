@@ -9,22 +9,22 @@
             @foreach($posts as $post)
                 <div>
                     <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        @if($post->featured_image)
                         <img class="w-full"
-                             src="https://images.unsplash.com/photo-1681958758179-207ff9bd9362?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                             src="{{ $post->featured_image->getUrl('preview') }}"
                              alt="Sunset in the mountains">
+                             @endif
                         <div class="bg-white">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2"><a
+                                <div class="font-bold text-md mb-2"><a
                                         href="{{ route('blog-detail',$post->slug) }}"> {{ $post->title }}</a></div>
 
                             </div>
                             <div class="px-6 pt-4 pb-2">
-                            <span
-                                class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Photography</span>
+                                @foreach($post->tags as $key => $item)
                                 <span
-                                    class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Travel</span>
-                                <span
-                                    class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Winter</span>
+                                class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ $item->name }}</span>
+                                @endforeach   
                             </div>
                         </div>
                     </div>

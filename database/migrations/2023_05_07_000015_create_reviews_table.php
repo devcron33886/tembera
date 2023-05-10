@@ -10,6 +10,8 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('service_id')->nullable();
+            $table->foreign('service_id', 'service_fk_8404541')->references('id')->on('services');
             $table->string('star_rate')->nullable();
             $table->timestamps();
             $table->softDeletes();

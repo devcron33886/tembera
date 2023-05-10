@@ -17,6 +17,8 @@ class CreateBookingsTable extends Migration
             $table->string('status')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
+            $table->unsignedBigInteger('package_id')->nullable();
+            $table->foreign('package_id', 'package_fk_8404408')->references('id')->on('packages');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -17,7 +17,7 @@
             <div class="lg:flex lg:items-center lg:justify-between">
                 <div class="min-w-0 flex-1">
                     <h2 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">{{ $post->title}}</h2>
-                    <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+                    <div class="mt-12 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                         <div class="mt-2 flex items-center text-sm text-white">
                             <svg class="mr-1.5 h-5 w-5 flex-shrink-0 text-white" viewBox="0 0 20 20" fill="currentColor"
                                  aria-hidden="true">
@@ -27,9 +27,9 @@
                                 <path
                                     d="M3 15.055v-.684c.126.053.255.1.39.142 2.092.642 4.313.987 6.61.987 2.297 0 4.518-.345 6.61-.987.135-.041.264-.089.39-.142v.684c0 1.347-.985 2.53-2.363 2.686a41.454 41.454 0 01-9.274 0C3.985 17.585 3 16.402 3 15.055z"/>
                             </svg>
-                            @foreach($post->categories as $key => $category)
-                                {{ $category->name }}
-                            @endforeach
+                            
+                                {{ $post->category->name }}
+                            
                         </div>
 
                         <div class="mt-2 flex items-center text-sm text-white">
@@ -55,15 +55,17 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
 
     </div>
-    <div class="py-12">
-        <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden">
-                <div class="p-6 text-gray-900">
+    <div class="py-12 mb-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden rounded-lg shadow-lg p-6 mb-8 mr-2 ml-2">
+                @if($post->featured_image)
+                    <img src="{{ $post->featured_image->getUrl('preview') }}" alt="{{ $post->title}}" class="mb-4 rounded-lg">
+                @endif
+                <div class="p-6 text-gray-900 mt-8">
                     {!! $post->body !!}
                 </div>
             </div>
