@@ -8,7 +8,7 @@ class BlogDetailController extends Controller
 {
     public function __invoke(Post $post,$slug)
     {
-        SEOTools::setTitle('');
+        SEOTools::setTitle('Blog');
         SEOTools::setDescription("$post->body");
         SEOTools::opengraph()->setUrl('https://tembera250.com/blog/'.'{{ $post->slug}}');
         SEOTools::setCanonical('https://tembera250.com/blog/'.'{{ $post->slug}}');
