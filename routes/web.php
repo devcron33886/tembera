@@ -27,6 +27,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
+use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
@@ -129,3 +130,8 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth'
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/sitemap.xml', function () {
+    SitemapGenerator::create('http://tembera.test')->writeToFile(public_path('sitemap.xml'));
+    return response()->view('sitemap');
+});
