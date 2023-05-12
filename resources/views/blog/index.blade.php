@@ -58,30 +58,26 @@
                 <h2 id="product-heading" class="sr-only">Posts</h2>
 
                 <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-2">
-                    
-
-@foreach($posts as $post)
-                    <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
-                        <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
-                            @if($post->featured_image)
-                                 <a href="{{ route('blog-detail',$post->slug) }}">
-                        <img class="h-full w-full object-cover object-center sm:h-full sm:w-full" src="{{ $post->featured_image->getUrl('preview') }}" alt="{{ $post->title}}" />
-                        @endif
-                    </a>
+                    @foreach($posts as $post)
+                        <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+                            <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                                @if($post->featured_image)
+                                    <a href="{{ route('blog-detail',$post->slug) }}">
+                                        <img class="h-full w-full object-cover object-center sm:h-full sm:w-full" src="{{ $post->featured_image->getUrl('preview') }}" alt="{{ $post->title}}" />
+                                    </a>
+                                @endif
+                            </div>
+                            <div class="p-5">
+                                <a href="{{ route('blog-detail',$post->slug) }}">
+                                    <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title}}</h5>
+                                </a>
+                                 <a href="{{ route('blog-detail',$post->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Read more
+                                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title}}</h5>
-                            </a>
-                            
-                            <a href="{{ route('blog-detail',$post->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
                     @endforeach
-
                 </div>
             </section>
         </div>

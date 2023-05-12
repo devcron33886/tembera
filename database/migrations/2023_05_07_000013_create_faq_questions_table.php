@@ -12,7 +12,7 @@ class CreateFaqQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('question')->nullable();
             $table->longText('answer')->nullable();
-             $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id', 'category_fk_8404461')->references('id')->on('categories');
             $table->timestamps();
             $table->softDeletes();

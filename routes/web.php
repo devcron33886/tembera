@@ -27,11 +27,12 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
-use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
-Route::get('/services', ServicesController::class)->name('services.index');
+Route::get('/services', [ServicesController::class,'index'])->name('services.index');
+Route::get('/services/{slug}', [ServicesController::class,'show'])->name('services.details');
 Route::get('/about-us', AboutController::class)->name('about.index');
 Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
 Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.index');
@@ -80,6 +81,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
     // Service
     Route::delete('services/destroy', [ServiceController::class, 'massDestroy'])->name('services.massDestroy');
+    Route::post('services/media', [ServiceController::class, 'storeMedia'])->name('services.storeMedia');
+    Route::post('services/ckmedia', [ServiceController::class, 'storeCKEditorImages'])->name('services.storeCKEditorImages');
     Route::resource('services', ServiceController::class);
 
     // Package
@@ -133,5 +136,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/sitemap.xml', function () {
     SitemapGenerator::create('http://tembera.test')->writeToFile(public_path('sitemap.xml'));
+
     return response()->view('sitemap');
 });

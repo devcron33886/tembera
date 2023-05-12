@@ -11,7 +11,7 @@ class ServiceComponent extends Component
 {
     public function render(): View|Closure|string
     {
-        $services = Service::limit(6)->get();
+        $services = Service::with(['media'])->limit(6)->get();
 
         return view('components.service-component', compact('services'));
     }

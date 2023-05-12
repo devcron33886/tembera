@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Artesaos\SEOTools\Facades\SEOTools;
 
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class WelcomeController extends Controller
 {
@@ -15,6 +15,7 @@ class WelcomeController extends Controller
         SEOTools::opengraph()->addProperty('type', 'pages');
         SEOTools::twitter()->setSite('@Tembera250');
         SEOTools::jsonLd()->addImage('https://tembera250.com/images/logo.png');
+
         return view('welcome');
     }
 
@@ -27,5 +28,4 @@ class WelcomeController extends Controller
     {
         return view('booking');
     }
-
 }

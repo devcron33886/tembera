@@ -7,7 +7,7 @@
                      <ul role="list" class="mt-6 space-y-4">
                         <li>
                             <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Blog</a>
+                            <a href=" {{ route('blog.index') }}" class="text-sm leading-6 text-gray-300 hover:text-white">Blog</a>
                         </li>
 
                         <li>
@@ -16,7 +16,7 @@
                         </li>
 
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Events</a>
+                            <a href="{{ route('events') }}" class="text-sm leading-6 text-gray-300 hover:text-white">Events</a>
                         </li>
 
                        
@@ -27,20 +27,20 @@
                     <h3 class="text-sm font-semibold leading-6 text-white">Quick Links</h3>
                     <ul role="list" class="mt-6 space-y-4">
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">About us</a>
+                            <a href="{{ route('about.index') }}" class="text-sm leading-6 text-gray-300 hover:text-white">About us</a>
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="{{ route('booking.index') }}"
                                class="text-sm leading-6 text-gray-300 hover:text-white">Booking</a>
                         </li>
 
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Services</a>
+                            <a href="{{ route('services.index') }}" class="text-sm leading-6 text-gray-300 hover:text-white">Services</a>
                         </li>
 
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Contact us</a>
+                            <a href="{{ route('contact.index') }}" class="text-sm leading-6 text-gray-300 hover:text-white">Contact us</a>
                         </li>
                     </ul>
                 </div>
@@ -49,15 +49,15 @@
                     <h3 class="text-sm font-semibold leading-6 text-white">Contact us</h3>
                     <ul role="list" class="mt-6 space-y-4">
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->email}}</a>
+                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->email ?? ''}}</a>
                         </li>
 
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->address}}</a>
+                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->address ?? ''}}</a>
                         </li>
 
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->mobile}}</a>
+                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">{{ $defaultSettings->mobile ?? ''}}</a>
                         </li>
                     </ul>
                     
@@ -66,7 +66,7 @@
             <div
                 class="mt-16 border-t border-white pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
                 <div class="flex space-x-6 md:order-2">
-                    <a href="{{ $defaultSettings->facebook }}" class="text-white hover:text-gray-400" target="_blank">
+                    <a href="{{ $defaultSettings->facebook ?? '' }}" class="text-white hover:text-gray-400" target="_blank">
                         <span class="sr-only">Facebook</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -75,7 +75,7 @@
                         </svg>
                     </a>
 
-                    <a href="{{ $defaultSettings->instagram }}" class="text-white hover:text-gray-400" target="_blank">
+                    <a href="{{ $defaultSettings->instagram ?? '' }}" class="text-white hover:text-gray-400" target="_blank">
                         <span class="sr-only">Instagram</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -84,7 +84,7 @@
                         </svg>
                     </a>
 
-                    <a href="{{ $defaultSettings->twitter }}" class="text-white hover:text-gray-400" target="_blank">
+                    <a href="{{ $defaultSettings->twitter ?? '' }}" class="text-white hover:text-gray-400" target="_blank">
                         <span class="sr-only">Twitter</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path

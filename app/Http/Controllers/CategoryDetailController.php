@@ -11,7 +11,6 @@ class CategoryDetailController extends Controller
         $category = Category::with('posts')->where('slug', $slug)->firstOrFail();
         $posts = $category->posts()->orderByDesc('id')->paginate(12);
 
-
         return view('categories.index', compact('category', 'posts'));
     }
 }

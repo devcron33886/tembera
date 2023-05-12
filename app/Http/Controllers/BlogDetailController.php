@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Artesaos\SEOTools\Facades\SEOTools;
+
 use App\Models\Post;
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class BlogDetailController extends Controller
 {
-    public function __invoke(Post $post,$slug)
+    public function __invoke(Post $post, $slug)
     {
         SEOTools::setTitle('Blog');
         SEOTools::setDescription("$post->body");

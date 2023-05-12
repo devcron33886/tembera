@@ -13,7 +13,7 @@ class CreateServicesTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->nullable();
             $table->integer('price')->nullable();
-            $table->string('description');
+            $table->longText('description');
             $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();

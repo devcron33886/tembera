@@ -94,7 +94,7 @@ class PostController extends Controller
     {
         abort_if(Gate::denies('post_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $post->load('author', 'tags', 'category','media');
+        $post->load('author', 'tags', 'category', 'media');
 
         return view('admin.posts.show', compact('post'));
     }

@@ -59,7 +59,7 @@ class Post extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->fit('crop', 400, 400);
-        $this->addMediaConversion('preview')->fit('crop',1920,1080);
+        $this->addMediaConversion('preview')->fit('crop', 1920, 1080);
     }
 
     public function getFeaturedImageAttribute()

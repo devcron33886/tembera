@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Artesaos\SEOTools\Facades\SEOTools;
 
 class AboutController extends Controller
@@ -14,6 +15,7 @@ class AboutController extends Controller
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@Tembera250');
         SEOTools::jsonLd()->addImage('https://tembera250.com/images/logo.png');
+
         return view('about');
     }
 }
