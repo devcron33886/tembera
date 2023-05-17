@@ -1,80 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>http://tembera.test/</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com/</loc>
+        <lastmod>2023-05-14T20:19:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/booking</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com</loc>
+        <lastmod>2023-05-14T20:19:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/about-us</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com/events</loc>
+        <lastmod>2023-05-14T20:19:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/services</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com/booking</loc>
+        <lastmod>2023-05-14T20:19:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com/contact-us</loc>
+        <lastmod>2023-05-14T20:19:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/blog</loc>
-        <lastmod>2023-05-11T09:03:10+00:00</lastmod>
+        <loc>https://tembera250.com/blog</loc>
+        <lastmod>2023-05-14T20:19:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/events</loc>
-        <lastmod>2023-05-11T09:03:11+00:00</lastmod>
+        <loc>https://tembera250.com/services</loc>
+        <lastmod>2023-05-14T20:19:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://tembera.test/contact-us</loc>
-        <lastmod>2023-05-11T09:03:11+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://tembera.test/blog/discovering-the-beauty-and-heritage-of-musanze-a-touristic-area-in-rwanda</loc>
-        <lastmod>2023-05-11T09:03:12+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://tembera.test/blog/bruce-melody-the-rising-star-of-rwandan-music</loc>
-        <lastmod>2023-05-11T09:03:12+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://tembera.test/categories/entertainment</loc>
-        <lastmod>2023-05-11T09:03:12+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://tembera.test/categories/traveling</loc>
-        <lastmod>2023-05-11T09:03:12+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://tembera.test/categories/technology</loc>
-        <lastmod>2023-05-11T09:03:12+00:00</lastmod>
+        <loc>https://tembera250.com/about-us</loc>
+        <lastmod>2023-05-14T20:19:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>

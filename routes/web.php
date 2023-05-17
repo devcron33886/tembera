@@ -135,7 +135,7 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth'
 require __DIR__.'/auth.php';
 
 Route::get('/sitemap.xml', function () {
-    SitemapGenerator::create('http://tembera.test')->writeToFile(public_path('sitemap.xml'));
+    SitemapGenerator::create('https://tembera250.com')->writeToFile(public_path('sitemap.xml'));
 
     return response()->view('sitemap');
 });
