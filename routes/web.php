@@ -31,8 +31,8 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
-Route::get('/services', [ServicesController::class,'index'])->name('services.index');
-Route::get('/services/{slug}', [ServicesController::class,'show'])->name('services.details');
+Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
+Route::get('/services/{slug}', [ServicesController::class, 'show'])->name('services.details');
 Route::get('/about-us', AboutController::class)->name('about.index');
 Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
 Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.index');

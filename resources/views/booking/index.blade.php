@@ -22,24 +22,69 @@
             </div>
         </div>
     </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24">
-        <div class="bg-white overflow-hidden mr-4 ml-4">
-            <div class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        @foreach($packages as $package) 
-
-<a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{ asset('images/tembera 250 blog header.jpg') }}" alt="">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <div class="py-12">
+        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <form class="p-6 text-gray-900">
+                    <div>
+                        <x-input-label for="name" :value="__('Name')" />
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                    </div>
+                    <div class="mt-4">
+                        <x-input-label for="email" :value="__('Email')" />
+                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+                    <div class="mt-4">
+                        <x-input-label for="check-in" :value="__('Check in date')" />
+                        <x-text-input id="check-in-date" class="block mt-1 w-full" type="date" name="check_in_date" :value="old('check_in_date')"  autocomplete="date" />
+                    </div>
+                    <div class="mt-4">
+                        <x-input-label for="check-out-date" :value="__('Check-out Date')" />
+                        <x-text-input id="check-out-date" class="block mt-1 w-full" type="date" name="check_out_date" :value="old('check_out_date')"  autocomplete="date" />
+                    </div>
+                    <div class="mt-4">
+                        <x-input-label for="guests" :value="__('Number of Guests')" />
+                        <x-text-input id="guests" class="block mt-1 w-full" type="number" name="guests" :value="old('guests')"  autocomplete="number" />
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
     </div>
-</a>
-
-        
+{{--     <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <h2 class="text-2xl mb-4">Book your stay</h2>
+                    <form class="space-y-4">
+                        <!-- Name -->
+                        
+                        <!-- Email Address -->
+                        
+                        
+                        
+                        
             
-        @endforeach  
+              
+            </div>
+            
+            
+            
+            <div>
+              <button type="submit"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded w-full">Book Now</button>
+            </div>
+          </form>
+        </div>
+  </div> --}}
+</body>
+
+</html>
+
+            
+        </div>
     </div>
-    </div>
-    </div>
+  
 
 </x-app-layout>

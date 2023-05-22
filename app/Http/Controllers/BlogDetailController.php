@@ -9,7 +9,7 @@ class BlogDetailController extends Controller
 {
     public function __invoke(Post $post, $slug)
     {
-       
+
         $post = Post::with('tags', 'category')->where('slug', $slug)->firstOrFail();
         SEOTools::setTitle($post->title);
         SEOTools::setDescription($post->body);

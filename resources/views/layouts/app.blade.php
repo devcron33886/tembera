@@ -26,7 +26,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-900 antialiased">
+<body class="bg-gray-100 font-sans text-gray-900 antialiased">
     @include('layouts.navigation')
     <main>
         {{ $slot }}
