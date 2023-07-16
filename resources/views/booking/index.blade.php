@@ -1,5 +1,5 @@
 <x-app-layout>
-	<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
         <img src="{{ asset('images/tembera 250 blog header.jpg') }}" alt=""
              class="absolute inset-0 -z-10 h-full w-full object-cover" style="opacity: 0.5 !important;">
         <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
@@ -16,7 +16,8 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24">
             <div class="lg:flex lg:items-center lg:justify-between">
                 <div class="min-w-0 flex-1">
-                    <h1 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">Booking</h1>
+                    <h1 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">
+                        Booking</h1>
 
                 </div>
             </div>
@@ -28,43 +29,46 @@
                 <form action="" method="post" class="p-6 text-gray-900 grid grid-cols-2 gap-6">
                     @csrf
                     <div class="mt-4">
-                        <x-input-label for="package" :value="__('Choose Package')" />
-                        <x-select-component class="block mt-1 w-full" name="package_id" required autofocus>
-                            @forelse ($packages as $package)
-                                <option value="{{ $package->id }}" {{ $package->title }}>
-                                    {{ $package->name }}
-                                </option>
-                            @empty
-                                <p class="text-red-400">There are no packages available</p>
-                            @endforelse
-                        </x-select-component>
-                        <x-input-error :messages="$errors->get('package_id')" class="mt-2" />
+                        <x-input-label for="package" :value="__('Choose Package')"/>
+                        <select class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" name="package_id" id="package_id" required>
+                            
+                            @foreach($packages as $package)
+                                <option value="{{ $package->id }}" {{ old('package_id') == $package->id ? 'selected' : '' }}>{{ $package->title }}</option>
+                            @endforeach
+                        </select>
+                        <x-input-error :messages="$errors->get('package_id')" class="mt-2"/>
+                        
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="name" :value="__('Name')" />
-                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autocomplete="name" />
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <x-input-label for="name" :value="__('Name')"/>
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
+                                      autocomplete="name"/>
+                        <x-input-error :messages="$errors->get('name')" class="mt-2"/>
                     </div>
                     <div class="mt-4">
-                        <x-input-label for="email" :value="__('Email')" />
-                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        <x-input-label for="email" :value="__('Email')"/>
+                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                      :value="old('email')" required autocomplete="username"/>
+                        <x-input-error :messages="$errors->get('email')" class="mt-2"/>
                     </div>
                     <div class="mt-4">
-                        <x-input-label for="check-in" :value="__('Check in date')" />
-                        <x-text-input id="check-in-date" class="block mt-1 w-full" type="date" name="check_in_date" :value="old('check_in_date')"  autocomplete="date" />
+                        <x-input-label for="check-in" :value="__('Check in date')"/>
+                        <x-text-input id="check-in-date" class="block mt-1 w-full" type="date" name="check_in_date"
+                                      :value="old('check_in_date')" autocomplete="date"/>
                     </div>
                     <div class="mt-4">
-                        <x-input-label for="check-out-date" :value="__('Check-out Date')" />
-                        <x-text-input id="check-out-date" class="block mt-1 w-full" type="date" name="check_out_date" :value="old('check_out_date')"  autocomplete="date" />
+                        <x-input-label for="check-out-date" :value="__('Check-out Date')"/>
+                        <x-text-input id="check-out-date" class="block mt-1 w-full" type="date" name="check_out_date"
+                                      :value="old('check_out_date')" autocomplete="date"/>
                     </div>
                     <div class="mt-4">
-                        <x-input-label for="guests" :value="__('Number of Guests')" />
-                        <x-text-input id="number_of_people" class="block mt-1 w-full" type="number" name="number_of_people" :value="old('number_of_people')"  autocomplete="number" />
+                        <x-input-label for="guests" :value="__('Number of Guests')"/>
+                        <x-text-input id="number_of_people" class="block mt-1 w-full" type="number"
+                                      name="number_of_people" :value="old('number_of_people')" autocomplete="number"/>
                     </div>
                     <div class="mt-4">
-                        <x-primary-button class="py-4" type="submit">Book Now</x-secondory-button>
+                        <x-primary-button class="py-4" type="submit">Book Now</x-primary-button>
                     </div>
 
                 </form>

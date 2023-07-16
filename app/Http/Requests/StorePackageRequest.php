@@ -20,9 +20,7 @@ class StorePackageRequest extends FormRequest
                 'required',
                 'unique:packages',
             ],
-            'featured_image' => [
-                'required',
-            ],
+
             'price' => [
                 'required',
                 'integer',

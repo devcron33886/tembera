@@ -20,9 +20,7 @@ class UpdatePackageRequest extends FormRequest
                 'required',
                 'unique:packages,title,'.request()->route('package')->id,
             ],
-            'featured_image' => [
-                'required',
-            ],
+
             'price' => [
                 'required',
                 'integer',
