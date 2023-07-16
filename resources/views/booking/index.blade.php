@@ -31,7 +31,7 @@
                         <x-input-label for="package" :value="__('Choose Package')" />
                         <x-select-component class="block mt-1 w-full" name="package_id" required autofocus>
                             @forelse ($packages as $package)
-                                <option value="{{ $package->id }}" {{ $package->name }}>
+                                <option value="{{ $package->id }}" {{ $package->title }}>
                                     {{ $package->name }}
                                 </option>
                             @empty
