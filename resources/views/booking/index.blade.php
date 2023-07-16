@@ -23,12 +23,27 @@
         </div>
     </div>
     <div class="py-12">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form class="p-6 text-gray-900">
-                    <div>
+                <form action="" method="post" class="p-6 text-gray-900 grid grid-cols-2 gap-6">
+                    @csrf
+                    <div class="mt-4">
+                        <x-input-label for="package" :value="__('Choose Package')" />
+                        <x-select-component class="block mt-1 w-full" name="package_id" required autofocus>
+                            @forelse ($packages as $key => $package)
+                                <option value="{{ $key }}" {{ $selected == $key ? 'selected' : '' }}>
+                                    {{ $value }}
+                                </option>
+                            @empty
+                                <p class="text-red-400">There are no packages available</p>
+                            @endforelse
+                        </x-select-component>
+                        <x-input-error :messages="$errors->get('package_id')" class="mt-2" />
+                    </div>
+
+                    <div class="mt-4">
                         <x-input-label for="name" :value="__('Name')" />
-                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <div class="mt-4">
@@ -46,45 +61,14 @@
                     </div>
                     <div class="mt-4">
                         <x-input-label for="guests" :value="__('Number of Guests')" />
-                        <x-text-input id="guests" class="block mt-1 w-full" type="number" name="guests" :value="old('guests')"  autocomplete="number" />
+                        <x-text-input id="number_of_people" class="block mt-1 w-full" type="number" name="number_of_people" :value="old('number_of_people')"  autocomplete="number" />
                     </div>
-                    
+                    <div class="mt-4">
+                        <x-primary-button class="py-4" type="submit">Book Now</x-secondory-button>
+                    </div>
+
                 </form>
             </div>
         </div>
     </div>
-{{--     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <h2 class="text-2xl mb-4">Book your stay</h2>
-                    <form class="space-y-4">
-                        <!-- Name -->
-                        
-                        <!-- Email Address -->
-                        
-                        
-                        
-                        
-            
-              
-            </div>
-            
-            
-            
-            <div>
-              <button type="submit"
-                class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded w-full">Book Now</button>
-            </div>
-          </form>
-        </div>
-  </div> --}}
-</body>
-
-</html>
-
-            
-        </div>
-    </div>
-  
-
 </x-app-layout>

@@ -2,14 +2,13 @@
 
 namespace App\Http\Requests;
 
-use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreBookingRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('booking_create');
+        return true;
     }
 
     public function rules()
@@ -18,6 +17,9 @@ class StoreBookingRequest extends FormRequest
             'name' => [
                 'string',
                 'required',
+            ],
+            'number_of_people' => [
+                'required', 'min:1', 'integer',
             ],
             'package_id' => [
                 'required',

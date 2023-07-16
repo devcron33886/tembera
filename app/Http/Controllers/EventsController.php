@@ -17,9 +17,7 @@ class EventsController extends Controller
         SEOTools::twitter()->setSite('@Tembera250');
         SEOTools::jsonLd()->addImage('https://tembera250.com/images/logo.png');
 
-        $events = Event::where('status',1)->get();
-
-            
+        $events = Event::where('status', 1)->get();
 
         /*foreach ($events as $event) {
             $endDate = $event->end_date;
@@ -28,8 +26,6 @@ class EventsController extends Controller
             // Display the data for each end date
             echo "End Date: $endDate, Count: $count <br>";
         }*/
-
-        
 
         return view('events.index', compact('events'));
     }

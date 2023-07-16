@@ -6,7 +6,9 @@ use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Notification;
 
 class Booking extends Model
 {
@@ -33,6 +35,7 @@ class Booking extends Model
         'package_id',
         'check_in_date',
         'check_out_date',
+        'number_of_people',
         'message',
         'status',
         'email',
@@ -47,7 +50,7 @@ class Booking extends Model
         return $date->format('Y-m-d H:i:s');
     }
 
-    public function package()
+    public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class, 'package_id');
     }
@@ -70,5 +73,14 @@ class Booking extends Model
     public function setCheckOutDateAttribute($value)
     {
         $this->attributes['check_out_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+
+    public static function booting()
+    {
+        self::updated(function (Booking $booking) {
+            if ($booking->isDirty('status') && in_array($booking->status, ['Confirmed', 'Cancelled'])) {
+                Notification::route('mail', $booking->email)->notify(new BookingStatusChangeNotification($booking->status));
+            }
+        });
     }
 }

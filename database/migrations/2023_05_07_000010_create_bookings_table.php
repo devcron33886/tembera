@@ -13,6 +13,7 @@ class CreateBookingsTable extends Migration
             $table->string('name');
             $table->datetime('check_in_date');
             $table->date('check_out_date')->nullable();
+            $table->integer('number_of_people');
             $table->longText('message')->nullable();
             $table->string('status')->nullable();
             $table->string('email')->nullable();

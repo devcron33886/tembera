@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBookingRequest;
 use App\Models\Package;
 
 class BookingsController extends Controller
@@ -11,5 +12,13 @@ class BookingsController extends Controller
         $packages = Package::orderByDesc('id')->get();
 
         return view('booking.index', compact('packages'));
+    }
+
+    public function booking(StoreBookingRequest $request)
+    {
+        $data = array_merge($request->validated(), ['status' => 'Pending']);
+        Booking:create($request->all());
+
+        return to_route('booking.index')->with('message', 'Your booking is received please check your email to see the status of your booking.');
     }
 }
