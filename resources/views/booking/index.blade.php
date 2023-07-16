@@ -30,9 +30,9 @@
                     <div class="mt-4">
                         <x-input-label for="package" :value="__('Choose Package')" />
                         <x-select-component class="block mt-1 w-full" name="package_id" required autofocus>
-                            @forelse ($packages as $key => $package)
-                                <option value="{{ $key }}" {{ $selected == $key ? 'selected' : '' }}>
-                                    {{ $value }}
+                            @forelse ($packages as $package)
+                                <option value="{{ $package->id }}" {{ $package->name }}>
+                                    {{ $package->name }}
                                 </option>
                             @empty
                                 <p class="text-red-400">There are no packages available</p>
