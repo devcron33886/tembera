@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use DateTimeInterface;
+use App\Notifications\BookingStatusChangeNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

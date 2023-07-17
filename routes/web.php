@@ -34,9 +34,11 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
 Route::get('/services/{slug}', [ServicesController::class, 'show'])->name('services.details');
 Route::get('/about-us', AboutController::class)->name('about.index');
-Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
 Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');
+Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
+Route::post('booking',[BookingsController::class,'booking'])->name('booking.store');
+
 Route::get('/blog', BlogController::class)->name('blog.index');
 Route::get('events', EventsController::class)->name('events');
 Route::get('/blog/{slug}', BlogDetailController::class)->name('blog-detail');
@@ -131,7 +133,6 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth'
         Route::post('profile/destroy', [ChangePasswordController::class, 'destroy'])->name('password.destroyProfile');
     }
 });
-
 require __DIR__.'/auth.php';
 
 Route::get('/sitemap.xml', function () {

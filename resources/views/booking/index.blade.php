@@ -26,7 +26,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form action="" method="post" class="p-6 text-gray-900 grid grid-cols-2 gap-6">
+                <form action="{{ route('booking.store') }}" method="post" class="p-6 text-gray-900 grid grid-cols-2 gap-6">
                     @csrf
                     <div class="mt-4">
                         <x-input-label for="package" :value="__('Choose Package')"/>
@@ -63,7 +63,7 @@
                                       :value="old('check_out_date')" autocomplete="date"/>
                     </div>
                     <div class="mt-4">
-                        <x-input-label for="guests" :value="__('Number of Guests')"/>
+                        <x-input-label for="guests" :value="__('Number of people')"/>
                         <x-text-input id="number_of_people" class="block mt-1 w-full" type="number"
                                       name="number_of_people" :value="old('number_of_people')" autocomplete="number"/>
                     </div>
