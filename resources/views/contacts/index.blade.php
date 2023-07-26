@@ -123,7 +123,7 @@
                         <div class="sm:col-span-2">
                             <x-input-label for="message" :value="__('Message')"/>
                             <div class="mt-2.5">
-                                <x-text-area id="telephone" type="" name="message"></x-text-area>
+                                <x-text-area id="telephone" type="text" name="message"></x-text-area>
                             </div>
                         </div>
                     </div>

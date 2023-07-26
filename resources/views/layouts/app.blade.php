@@ -25,6 +25,7 @@
             font-family: 'Rubik', sans-serif !important;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/datepicker.min.js"></script>
 </head>
 <body class="bg-gray-100 font-sans text-gray-900 antialiased">
     @include('layouts.navigation')

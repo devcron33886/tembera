@@ -25,10 +25,12 @@ use App\Http\Controllers\CategoryDetailController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ServicesController;
+
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
+
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
@@ -37,7 +39,7 @@ Route::get('/about-us', AboutController::class)->name('about.index');
 Route::get('/contact-us', [ContactsController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');
 Route::get('/booking', [BookingsController::class, 'index'])->name('booking.index');
-Route::post('booking',[BookingsController::class,'booking'])->name('booking.store');
+Route::post('/book-now', [BookingsController::class, 'booking'])->name('booking.store');
 
 Route::get('/blog', BlogController::class)->name('blog.index');
 Route::get('events', EventsController::class)->name('events');

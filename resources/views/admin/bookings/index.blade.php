@@ -73,7 +73,7 @@
                                 {{ $booking->check_out_date ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\Booking::STATUS_SELECT[$booking->status] ?? '' }}
+                                {{ $booking->status ?? '' }}
                             </td>
                             <td>
                                 {{ $booking->email ?? '' }}

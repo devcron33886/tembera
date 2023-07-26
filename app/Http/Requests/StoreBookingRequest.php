@@ -27,16 +27,24 @@ class StoreBookingRequest extends FormRequest
             ],
             'check_in_date' => [
                 'required',
-                'date_format:'.config('panel.date_format').' '.config('panel.time_format'),
             ],
             'check_out_date' => [
-                'date_format:'.config('panel.date_format'),
                 'nullable',
             ],
             'mobile' => [
                 'string',
-                'nullable',
+                'required',
             ],
+
+            'email' => [
+                'required',
+                'email',
+            ],
+            'message'=>[
+                'string',
+                'max:500'
+            ]
+
         ];
     }
 }
