@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\BookingNotification;
 use App\Notifications\BookingStatusChangeNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,9 +17,9 @@ class Booking extends Model
     public $table = 'bookings';
 
     public const STATUS_SELECT = [
-        '0' => 'Pending',
-        '1' => 'Confirmed',
-        '2' => 'Cancelled',
+        'Pending' => 'Pending',
+        'Confirmed' => 'Confirmed',
+        'Cancelled' => 'Cancelled',
     ];
 
     protected $dates = [
@@ -44,20 +45,27 @@ class Booking extends Model
         'deleted_at',
     ];
 
-   
-
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class, 'package_id');
     }
 
-    
+    public static function boot()
+    {
+        parent::boot();
+        static::created(function ($booking) {
+            Notification::route('mail', $booking->email)->notify(new BookingNotification($booking->status));
+        });
+    }
+
     public static function booting()
     {
+
         self::updated(function (Booking $booking) {
             if ($booking->isDirty('status') && in_array($booking->status, ['Confirmed', 'Cancelled'])) {
                 Notification::route('mail', $booking->email)->notify(new BookingStatusChangeNotification($booking->status));
             }
         });
+
     }
 }

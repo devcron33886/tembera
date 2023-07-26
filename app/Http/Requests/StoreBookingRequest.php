@@ -40,10 +40,10 @@ class StoreBookingRequest extends FormRequest
                 'required',
                 'email',
             ],
-            'message'=>[
+            'message' => [
                 'string',
-                'max:500'
-            ]
+                'max:500',
+            ],
 
         ];
     }

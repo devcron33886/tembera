@@ -31,18 +31,11 @@
                         <th>
                             {{ trans('cruds.booking.fields.package') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.booking.fields.check_in_date') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.booking.fields.check_out_date') }}
-                        </th>
+                       
                         <th>
                             {{ trans('cruds.booking.fields.status') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.booking.fields.email') }}
-                        </th>
+                       
                         <th>
                             {{ trans('cruds.booking.fields.mobile') }}
                         </th>
@@ -66,18 +59,17 @@
                             <td>
                                 {{ $booking->package->title ?? '' }}
                             </td>
+                            
                             <td>
-                                {{ $booking->check_in_date ?? '' }}
-                            </td>
-                            <td>
-                                {{ $booking->check_out_date ?? '' }}
-                            </td>
-                            <td>
-                                {{ $booking->status ?? '' }}
-                            </td>
-                            <td>
-                                {{ $booking->email ?? '' }}
-                            </td>
+                                @if ($booking->status=="Confirmed")
+                                    <button class="btn btn-success">Comfirmed</button>
+                                @elseif($booking->status=="Cancelled")
+                                   <button class="btn btn-md btn-danger">Cancelled</button>
+                                @elseif($booking->status=="Pending")
+                                <button class="btn btn-warning">Pending</button>
+                                @endif
+                                
+                            
                             <td>
                                 {{ $booking->mobile ?? '' }}
                             </td>

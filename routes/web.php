@@ -25,12 +25,10 @@ use App\Http\Controllers\CategoryDetailController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ServicesController;
-
 use App\Http\Controllers\TagDetailController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
-
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
